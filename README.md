@@ -15,7 +15,7 @@
 >    - `npm start`
 > 1. Open a browser and navigate to `localhost:3000` You should see a page that displays "Welcome to React!"
 
-### Bundle For Deployment
+### Build For Deployment
 
 > 1. Run webpack to build project
 >    - `npm run build`
