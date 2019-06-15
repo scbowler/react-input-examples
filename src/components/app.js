@@ -8,9 +8,18 @@ import Example3 from './example_3';
 
 class App extends Component {
     state = {
-        active: 0,
+        active: 1,
         Form: Example1
     }
+
+    Button = ({example, number}) => (
+        <button
+            className={this.setClass(number)}
+            onClick={this.changeExampleForm.bind(this, example, number)}
+        >
+            View Example {number}
+        </button>
+    )
 
     changeExampleForm(Form, active){
         this.setState({ active, Form });
@@ -23,12 +32,13 @@ class App extends Component {
     }
 
     RenderButtons = () => {
+        const { Button } = this;
 
         return (
             <div className="row center">
                 {
                     [Example1, Example2, Example3].map((ex, i) => (
-                        <button key={i} className={this.setClass(i)} onClick={this.changeExampleForm.bind(this, ex, i)}>View Example {i + 1}</button>
+                        <Button key={i} example={ex} number={i + 1}/>
                     ))
                 }
             </div>
